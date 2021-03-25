@@ -1,0 +1,17 @@
+<nav class="navbar__position flex">
+    <ul class="searx__navbar-list flex">
+        <li class="searx__navbar-list-item flex"><a title="Configuration" class="searx__link searx__link-primary searx__navbar-list-link" href="{{ url_for('preferences') }}">{{ _('preferences') }}</a></li>
+        <li class="searx__navbar-list-item searx__navbar-submenu flex">
+            <div class="searx__navbar-active-list-item flex js__show-sublist"><p class="searx__navbar-list-item active">Nl</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 21l-12-18h24z"/>
+                </svg>
+            </div>
+            <ul class="searx__navbar-sublist js__dropdown hidden">
+                <li class="searx__navbar-sublist-item"><a class="searx__navbar-sublist-link" data-lang="nl" href="#">Nederlands</a></li>
+                <li class="searx__navbar-sublist-item"><a class="searx__navbar-sublist-link" data-lang="fr" href="#">French</a></li>
+                <li class="searx__navbar-sublist-item"><a class="searx__navbar-sublist-link" data-lang="en" href="#">English</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

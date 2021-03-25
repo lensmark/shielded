@@ -1,0 +1,77 @@
+{% extends "shielded/base.html" %}
+{% block content %}
+<main class="searx__content about__content">
+    <div id="scrollto" class="searx__intro">
+        <div class="grid">
+            <div class="searx__intro-image-wrapper">
+                <picture>
+                    <source sizes="100vw" 
+                            srcset="{{ url_for('static', filename='images/content/fw-1-mobile-small.webp') }} 320w,
+                                    {{ url_for('static', filename='images/content/fw-1-mobile.webp') }} 480w,
+                                    {{ url_for('static', filename='images/content/fw-1-tablet-small.webp') }} 800w,
+                                    {{ url_for('static', filename='images/content/fw-1-tablet.webp') }} 1024w,
+                                    {{ url_for('static', filename='images/content/fw-1.webp') }} 1500w" 
+                            type="image/webp">
+                    <source sizes="100vw" 
+                            srcset="{{ url_for('static', filename='images/content/fw-1-mobile-small.jpg') }} 320w,
+                                    {{ url_for('static', filename='images/content/fw-1-mobile.jpg') }} 480w,
+                                    {{ url_for('static', filename='images/content/fw-1-tablet-small.jpg') }} 800w,
+                                    {{ url_for('static', filename='images/content/fw-1-tablet.jpg') }} 1024w,
+                                    {{ url_for('static', filename='images/content/fw-1.jpg') }} 1500w" 
+                            type="image/jpg">
+                    <img loading="lazy" src="{{ url_for('static', filename='images/content/fw-1.jpg') }}" alt="{{ _('Shielded full width image') }}">
+                </picture>
+                <svg class="lazy fixed" data-url="{{ url_for('static', filename='images/content/overlay.svg') }}"></svg>
+            </div>
+            <div class="searx__intro-content inner">
+                <div class="searx__intro-content-wrapper flex">
+                    <div class="left"><h3 class="searx__intro-content-title"><span>100% {{ _('veilig') }}</span><br>{{ _('en anoniem') }}</h3></div>
+                    <div class="right"><p>{{ _('Shielded deelt de IP-adressen of zoekgeschiedenis van gebruikers niet met de zoekmachines waaruit het resultaten verzamelt.') }}</p>
+                        <p>{{ _('Trackingcookies die door de zoekmachines worden aangeboden, worden geblokkeerd, waardoor wijziging van resultaten op basis van gebruikersprofilering wordt voorkomen.') }}</p>
+                        <div class="right__wrapper">
+                            <div class="searx__benefits"><svg class="lazy" data-url="{{ url_for('static', filename='images/content/icons/usercard.svg') }}"></svg>
+                                <p>{{ _('We verzamelen<br>geen persoonlijke<br>gegevens') }}</p></div>
+                            <div class="searx__benefits"><svg class="lazy" data-url="{{ url_for('static', filename='images/content/icons/advertise.svg') }}"></svg>
+                                <p>{{ _('Geen reclame') }}</p></div>
+                            <div class="searx__benefits"><svg class="lazy" data-url="{{ url_for('static', filename='images/content/icons/trees.svg') }}"></svg>
+                                <p>{{ _('Wij planten bomen<br>bij elke zoekopdracht') }}</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="searx__benefit">
+        <div class="grid">
+            <div class="inner">
+                <div class="searx__benefit-wrapper flex">
+                    <article class="left"><h4 class="searx__benefit-title">{{ _('Reeds <span>913.111 bomen</span> geplant') }}</h4>
+                        <p>{{ _('Met shielded.eu helpen we het leven van mensen te veranderen, we gebruiken als bedrijf een gedeelte van onze winst om bomen te planten en woestijnen te herbebossen. Het planten van bomen voorziet families van meer dan alleen voedsel. <strong>Het zorgt voor inkomen, empowerment, eenheid, leiderschap, onderwijs en redt zelfs levens.</strong> Als we mensen kunnen leren zichzelf en hun omgeving te waarderen, zien ze een verbazingwekkende verbetering in hun levensstandaard.') }}</p>
+                        <p>{{ _('Uw donatie heeft een directe impact op de aarde en het leven van de mensen die het het meest nodig hebben. Door ons te helpen met het planten van bomen, geeft u families de mogelijkheid om over te stappen van niet-duurzame landbouwtechnieken naar een Forest Garden systeem. <strong>Uw donatie ondersteunt en versterkt hen niet alleen, maar verandert ook hun leven voorgoed.</strong>') }}</p><a href="https://www.promobutler.foundation/" class="button button--primary">{{ _('Over promobutler Foundation') }}</a></article>
+                    <div class="right"><svg class="lazy fixed" data-url="{{ url_for('static', filename='images/content/benefit.svg') }}"></svg></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="searx__video">
+        <div class="grid">
+            <div class="searx__video-content">
+                <button type="button" class="toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/>
+                    </svg>
+                    <span data-v-65f295f2="" class="sr-only">{{ _('Play') }}</span>
+                </button>
+                <picture>
+                    <source srcset="{{ url_for('static', filename='images/content/https___vimeo.com_463039521@2x.webp') }}" type="image/webp">
+                    <source srcset="{{ url_for('static', filename='images/content/https___vimeo.com_463039521@2x.jpg') }}" type="image/jpg">
+                    <img class="poster" loading="lazy" src="{{ url_for('static', filename='images/content/https___vimeo.com_463039521@2x.jpg') }}" alt="{{ _('video poster') }}">
+                </picture>
+                <div id="videocontainer" class="video">
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

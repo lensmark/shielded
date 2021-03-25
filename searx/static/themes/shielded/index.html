@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="searx - a privacy-respecting, hackable metasearch engine">
+    <meta name="keywords" content="searx, search, search engine, metasearch, meta search">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="searx/0.16.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,user-scalable=1">
+    <title>Shielded</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+    <nav class="searx__navbar navbar__position flex">
+        <ul class="searx__navbar-list flex">
+            <li class="searx__navbar-list-item flex"><a title="Configuration" class="searx__link searx__link-primary searx__navbar-list-link" href="{{ url_for('preferences') }}">{{ _('preferences') }}</a></li>
+            <li class="searx__navbar-list-item searx__navbar-submenu flex">
+                <div class="searx__navbar-active-list-item flex js__show-sublist"><p class="searx__navbar-list-item active">Nl</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 21l-12-18h24z"/>
+                    </svg>
+                </div>
+                <ul class="searx__navbar-sublist js__dropdown hidden">
+                    <li class="searx__navbar-sublist-item"><a class="searx__navbar-sublist-link" data-lang="nl" href="#">Nederlands</a></li>
+                    <li class="searx__navbar-sublist-item"><a class="searx__navbar-sublist-link" data-lang="fr" href="#">French</a></li>
+                    <li class="searx__navbar-sublist-item"><a class="searx__navbar-sublist-link" data-lang="en" href="#">English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <header class="searx__header">
+        <div class="searx__header-wrapper">
+            <div class="searx__logo text--hide"><img src="{{ url_for('static', filename='images/content/shielded_light_bg.png') }}" alt="{{ _('Shielded logo') }}"> Shielded</div>
+            <div class="searx__content"><h1 class="searx__header-title">{{ _('Zoeken zonder gevolgd te worden') }}</h1>
+                <ul class="searx__header-list flex">
+                    <li class="searx__header-list-item flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M23.334 11.96c-.713-.726-.872-1.829-.393-2.727.342-.64.366-1.401.064-2.062-.301-.66-.893-1.142-1.601-1.302-.991-.225-1.722-1.067-1.803-2.081-.059-.723-.451-1.378-1.062-1.77-.609-.393-1.367-.478-2.05-.229-.956.347-2.026.032-2.642-.776-.44-.576-1.124-.915-1.85-.915-.725 0-1.409.339-1.849.915-.613.809-1.683 1.124-2.639.777-.682-.248-1.44-.163-2.05.229-.61.392-1.003 1.047-1.061 1.77-.082 1.014-.812 1.857-1.803 2.081-.708.16-1.3.642-1.601 1.302s-.277 1.422.065 2.061c.479.897.32 2.001-.392 2.727-.509.517-.747 1.242-.644 1.96s.536 1.347 1.17 1.7c.888.495 1.352 1.51 1.144 2.505-.147.71.044 1.448.519 1.996.476.549 1.18.844 1.902.798 1.016-.063 1.953.54 2.317 1.489.259.678.82 1.195 1.517 1.399.695.204 1.447.072 2.031-.357.819-.603 1.936-.603 2.754 0 .584.43 1.336.562 2.031.357.697-.204 1.258-.722 1.518-1.399.363-.949 1.301-1.553 2.316-1.489.724.046 1.427-.249 1.902-.798.475-.548.667-1.286.519-1.996-.207-.995.256-2.01 1.145-2.505.633-.354 1.065-.982 1.169-1.7s-.135-1.443-.643-1.96zm-12.584 5.43l-4.5-4.364 1.857-1.857 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.642z"/>
+                        </svg>
+                        <h2 class="searx__header-list-title">{{ _('Volledige privacy bescherming') }}</h2></li>
+                    <li class="searx__header-list-item flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M23.334 11.96c-.713-.726-.872-1.829-.393-2.727.342-.64.366-1.401.064-2.062-.301-.66-.893-1.142-1.601-1.302-.991-.225-1.722-1.067-1.803-2.081-.059-.723-.451-1.378-1.062-1.77-.609-.393-1.367-.478-2.05-.229-.956.347-2.026.032-2.642-.776-.44-.576-1.124-.915-1.85-.915-.725 0-1.409.339-1.849.915-.613.809-1.683 1.124-2.639.777-.682-.248-1.44-.163-2.05.229-.61.392-1.003 1.047-1.061 1.77-.082 1.014-.812 1.857-1.803 2.081-.708.16-1.3.642-1.601 1.302s-.277 1.422.065 2.061c.479.897.32 2.001-.392 2.727-.509.517-.747 1.242-.644 1.96s.536 1.347 1.17 1.7c.888.495 1.352 1.51 1.144 2.505-.147.71.044 1.448.519 1.996.476.549 1.18.844 1.902.798 1.016-.063 1.953.54 2.317 1.489.259.678.82 1.195 1.517 1.399.695.204 1.447.072 2.031-.357.819-.603 1.936-.603 2.754 0 .584.43 1.336.562 2.031.357.697-.204 1.258-.722 1.518-1.399.363-.949 1.301-1.553 2.316-1.489.724.046 1.427-.249 1.902-.798.475-.548.667-1.286.519-1.996-.207-.995.256-2.01 1.145-2.505.633-.354 1.065-.982 1.169-1.7s-.135-1.443-.643-1.96zm-12.584 5.43l-4.5-4.364 1.857-1.857 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.642z"/>
+                        </svg>
+                        <h2 class="searx__header-list-title">{{ _('Zoek door 70+ zoekmachines') }}</h2></li>
+                    <li class="searx__header-list-item flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M23.334 11.96c-.713-.726-.872-1.829-.393-2.727.342-.64.366-1.401.064-2.062-.301-.66-.893-1.142-1.601-1.302-.991-.225-1.722-1.067-1.803-2.081-.059-.723-.451-1.378-1.062-1.77-.609-.393-1.367-.478-2.05-.229-.956.347-2.026.032-2.642-.776-.44-.576-1.124-.915-1.85-.915-.725 0-1.409.339-1.849.915-.613.809-1.683 1.124-2.639.777-.682-.248-1.44-.163-2.05.229-.61.392-1.003 1.047-1.061 1.77-.082 1.014-.812 1.857-1.803 2.081-.708.16-1.3.642-1.601 1.302s-.277 1.422.065 2.061c.479.897.32 2.001-.392 2.727-.509.517-.747 1.242-.644 1.96s.536 1.347 1.17 1.7c.888.495 1.352 1.51 1.144 2.505-.147.71.044 1.448.519 1.996.476.549 1.18.844 1.902.798 1.016-.063 1.953.54 2.317 1.489.259.678.82 1.195 1.517 1.399.695.204 1.447.072 2.031-.357.819-.603 1.936-.603 2.754 0 .584.43 1.336.562 2.031.357.697-.204 1.258-.722 1.518-1.399.363-.949 1.301-1.553 2.316-1.489.724.046 1.427-.249 1.902-.798.475-.548.667-1.286.519-1.996-.207-.995.256-2.01 1.145-2.505.633-.354 1.065-.982 1.169-1.7s-.135-1.443-.643-1.96zm-12.584 5.43l-4.5-4.364 1.857-1.857 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.642z"/>
+                        </svg>
+                        <h2 class="searx__header-list-title">{{ _('Geen reclame') }}</h2></li>
+                </ul>
+            </div>
+            <div class="searx__form-search">
+                <form method="POST" action="/" id="search_form" role="search">
+                    <div class="input-group">
+                        <svg class="svg__fixed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"/>
+                        </svg>
+                        <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input type="search" autofocus="" class="form-control input-lg autofocus tt-hint" aria-label="{{ _('Doorzoek veilig het web ...') }}" autocomplete="off" value="" accesskey="q" readonly="" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"> <input type="search" autofocus="" name="q" class="form-control input-lg autofocus tt-input" id="q" placeholder="{{ _('Doorzoek veilig het web ...') }}" aria-label="{{ _('Zoeken naar...') }}" autocomplete="off" value="" accesskey="s" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     style="position: absolute; visibility: hidden; white-space: pre; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span
+                                class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-search-results"></div></span></span><span class="input-group-btn"><button type="submit" class="btn btn-default input-lg" aria-label="{{ _('Start zoeken') }}"><span class="hide_if_nojs">{{ _('Zoeken') }} </span><span class="hidden active_if_nojs">{{ _('Start zoeken') }}</span></button> <button type="reset" class="btn btn-default input-lg" aria-label="{{ _('Clear search') }}"><span class="hide_if_nojs"><span class="glyphicon glyphicon-remove"></span> </span><span class="hidden active_if_nojs">{{ _('Clear') }}</span></button></span></div>
+                    <div class="advanced"><input type="checkbox" name="advanced_search" class="visually-hidden" id="check-advanced"> <label for="check-advanced"><span class="glyphicon glyphicon-cog"></span> {{ _('Geavanceerde instellingen') }}</label>
+                        <div id="advanced-search-container">
+                            <div id="categories"><input class="hidden" type="checkbox" id="checkbox_general" name="category_general" checked="checked"> <label for="checkbox_general">{{ _('algemeen') }}</label> <input class="hidden" type="checkbox" id="checkbox_images" name="category_images"> <label for="checkbox_images">{{ _('afbeeldingen') }}</label> <input class="hidden" type="checkbox" id="checkbox_music" name="category_music"> <label for="checkbox_music">{{ _('muziek') }}</label> <input class="hidden" type="checkbox" id="checkbox_news" name="category_news"> <label for="checkbox_news">{{ _('nieuws') }}</label> <input class="hidden" type="checkbox" id="checkbox_science" name="category_science"> <label for="checkbox_science">{{ _('wetenschap') }}</label> <input class="hidden" type="checkbox" id="checkbox_videos" name="category_videos"> <label for="checkbox_videos">{{ _('video’s') }}</label></div>
+                            <div class="row">
+                                <div class="col-xs-6"><label class="visually-hidden" for="time-range">{{ _('Tijdspanne') }}</label> <select name="time_range" id="time-range" class="custom-select form-control" accesskey="t">
+                                    <option id="time-range-anytime" value="" selected="">{{ _('Altijd') }}</option>
+                                    <option id="time-range-day" value="day">{{ _('Gisteren') }}</option>
+                                    <option id="time-range-week" value="week">{{ _('Vorige week') }}</option>
+                                    <option id="time-range-month" value="month">{{ _('Vorige maand') }}</option>
+                                    <option id="time-range-year" value="year">{{ _('Vorig jaar') }}</option>
+                                </select></div>
+                                <div class="col-xs-6"><label class="visually-hidden" for="language">{{ _('Language') }}</label> <select class="language custom-select form-control" id="language" name="language" accesskey="l">
+                                    <option value="all">{{ _('Standaardtaal') }}</option>
+                                    <option value="af-NA">Afrikaans- af-NA</option>
+                                    <option value="ca-AD">Català- ca-AD</option>
+                                    <option value="da-DK">Dansk- da-DK</option>
+                                    <option value="de">Deutsch- de</option>
+                                    <option value="de-AT">Deutsch(Österreich) - de-AT</option>
+                                    <option value="de-CH">Deutsch(Schweiz) - de-CH</option>
+                                    <option value="de-DE">Deutsch(Deutschland) - de-DE</option>
+                                    <option value="et-EE">Eesti- et-EE</option>
+                                    <option value="en">English- en</option>
+                                    <option value="en-AU">English(Australia) - en-AU</option>
+                                    <option value="en-CA">English(Canada) - en-CA</option>
+                                    <option value="en-GB">English(United Kingdom) - en-GB</option>
+                                    <option value="en-IE">English(Ireland) - en-IE</option>
+                                    <option value="en-IN">English(India) - en-IN</option>
+                                    <option value="en-NZ">English(New Zealand) - en-NZ</option>
+                                    <option value="en-PH">English(Philippines) - en-PH</option>
+                                    <option value="en-SG">English(Singapore) - en-SG</option>
+                                    <option value="en-US">English(United States) - en-US</option>
+                                    <option value="es">Español- es</option>
+                                    <option value="es-AR">Español(Argentina) - es-AR</option>
+                                    <option value="es-CL">Español(Chile) - es-CL</option>
+                                    <option value="es-ES">Español(España) - es-ES</option>
+                                    <option value="es-MX">Español(México) - es-MX</option>
+                                    <option value="fr">Français- fr</option>
+                                    <option value="fr-BE">Français(Belgique) - fr-BE</option>
+                                    <option value="fr-CA">Français(Canada) - fr-CA</option>
+                                    <option value="fr-CH">Français(Suisse) - fr-CH</option>
+                                    <option value="fr-FR">Français(France) - fr-FR</option>
+                                    <option value="hr-HR">Hrvatski- hr-HR</option>
+                                    <option value="id-ID">Indonesia- id-ID</option>
+                                    <option value="it-IT">Italiano- it-IT</option>
+                                    <option value="sw-KE">Kiswahili- sw-KE</option>
+                                    <option value="lv-LV">Latviešu- lv-LV</option>
+                                    <option value="lt-LT">Lietuvių- lt-LT</option>
+                                    <option value="hu-HU">Magyar- hu-HU</option>
+                                    <option value="ms-MY">Melayu- ms-MY</option>
+                                    <option value="nl">Nederlands- nl</option>
+                                    <option value="nl-BE">Nederlands(België) - nl-BE</option>
+                                    <option value="nl-NL" selected="selected">Nederlands(Nederland) - nl-NL</option>
+                                    <option value="nb-NO">Norsk Bokmål- nb-NO</option>
+                                    <option value="pl-PL">Polski- pl-PL</option>
+                                    <option value="pt">Português- pt</option>
+                                    <option value="pt-BR">Português(Brasil) - pt-BR</option>
+                                    <option value="pt-PT">Português(Portugal) - pt-PT</option>
+                                    <option value="ro-RO">Română- ro-RO</option>
+                                    <option value="sk-SK">Slovenčina- sk-SK</option>
+                                    <option value="sl-SI">Slovenščina- sl-SI</option>
+                                    <option value="sr-RS">Srpski- sr-RS</option>
+                                    <option value="fi-FI">Suomi- fi-FI</option>
+                                    <option value="sv-SE">Svenska- sv-SE</option>
+                                    <option value="vi-VN">Tiếng Việt- vi-VN</option>
+                                    <option value="tr-TR">Türkçe- tr-TR</option>
+                                    <option value="is-IS">Íslenska- is-IS</option>
+                                    <option value="cs-CZ">Čeština- cs-CZ</option>
+                                    <option value="el-GR">Ελληνικά- el-GR</option>
+                                    <option value="be-BY">Беларуская- be-BY</option>
+                                    <option value="bg-BG">Български- bg-BG</option>
+                                    <option value="ru-RU">Русский- ru-RU</option>
+                                    <option value="uk-UA">Українська- uk-UA</option>
+                                    <option value="hy-AM">Հայերեն- hy-AM</option>
+                                    <option value="he-IL">עברית- he-IL</option>
+                                    <option value="ar-SA">العربية- ar-SA</option>
+                                    <option value="fa-IR">فارسی- fa-IR</option>
+                                    <option value="th-TH">ไทย- th-TH</option>
+                                    <option value="zh">中文- zh</option>
+                                    <option value="zh-CN">中文(中国) - zh-CN</option>
+                                    <option value="zh-TW">中文(台灣) - zh-TW</option>
+                                    <option value="ja-JP">日本語- ja-JP</option>
+                                    <option value="ko-KR">한국어- ko-KR</option>
+                                </select></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="searx__header-more"><a href="#scrollto">{{ _('Scroll voor meer over shielded') }}<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+            </svg>
+        </a></div>
+    </header>
+    <main class="searx__content" loading="lazy">
+        <section id="scrollto" class="searx__intro">
+            <div class="grid">
+                <div class="searx__intro-image-wrapper"><img class="lazy" data-src="./images/content/fw-1.jpg" alt="Shielded full width image" loading="lazy"> <img class="lazy fixed" data-src="./images/content/VectorSmartObject@2x.png" alt="Shielded full width image" loading="lazy"></div>
+                <div class="searx__intro-content inner">
+                    <div class="searx__intro-content-wrapper flex">
+                        <article class="left"><h3 class="searx__intro-content-title"><span>100% veilig</span> en anoniem</h3></article>
+                        <article class="right"><p>Shielded deelt de IP-adressen of zoekgeschiedenis van gebruikers niet met de zoekmachines waaruit het resultaten verzamelt.</p>
+                            <p>Trackingcookies die door de zoekmachines worden aangeboden, worden geblokkeerd, waardoor wijziging van resultaten op basis van gebruikersprofilering wordt voorkomen.</p>
+                            <div class="right__wrapper">
+                                <div class="searx__benefits"><img class="lazy" data-src="./images/content/icons/usercard.png" alt="Benefit image" loading="lazy">
+                                    <p>We verzamelen geen persoonlijke gegevens</p></div>
+                                <div class="searx__benefits"><img class="lazy" data-src="./images/content/icons/advertise.png" alt="Benefit image" loading="lazy">
+                                    <p>Geen reclame</p></div>
+                                <div class="searx__benefits"><img class="lazy" data-src="./images/content/icons/trees.png" alt="Benefit image" loading="lazy">
+                                    <p>Wij planten bomen bij elke zoekopdracht</p></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="searx__benefit">
+            <div class="grid">
+                <div class="inner">
+                    <div class="searx__benefit-wrapper flex">
+                        <article class="left"><h4 class="searx__benefit-title">Reeds <span>913.111 bomen</span> geplant</h4>
+                            <p>Met shielded.eu helpen we het leven van mensen te veranderen, we gebruiken als bedrijf een gedeelte van onze winst om bomen te planten en woestijnen te herbebossen. Het planten van bomen voorziet families van meer dan alleen voedsel. <strong>Het zorgt voor inkomen, empowerment, eenheid, leiderschap, onderwijs en redt zelfs levens.</strong> Als we mensen kunnen leren zichzelf en hun omgeving te waarderen, zien ze een verbazingwekkende verbetering in hun levensstandaard.</p>
+                            <p>Uw donatie heeft een directe impact op de aarde en het leven van de mensen die het het meest nodig hebben. Door ons te helpen met het planten van bomen, geeft u families de mogelijkheid om over te stappen van niet-duurzame landbouwtechnieken naar een Forest Garden systeem. <strong>Uw donatie ondersteunt en versterkt hen niet alleen, maar verandert ook hun leven voorgoed.</strong></p><a href="javascript:;" class="button button--primary">Over promobutler Foundation</a></article>
+                        <article class="right"><img class="lazy" data-src="./images/content/benefit.png" alt="Shielded benefits" loading="lazy"></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="searx__video">
+            <div class="grid">
+                <article class="searx__video-content">
+                    <button type="button" class="toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/>
+                        </svg>
+                        <span data-v-65f295f2="" class="sr-only">Play</span></button>
+                    <img class="lazy poster" data-src="./images/content/https___vimeo.com_463039521@2x.jpg" loading="lazy">
+                    <div id="videocontainer" class="video">
+                        <script src="https://player.vimeo.com/api/player.js"></script>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="inner">
+            <div class="footer__wrapper"><p>Shielded - een privacy-eerbiedigende zoekmachine</p>
+                <ul>
+                    <li><a href="">Over IT Solutions</a></li>
+                    <li><a href="">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
